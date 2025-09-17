@@ -1,0 +1,45 @@
+{
+  "name": "defi-bullz-website",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Defi Bullz - AI Trading Journal Website",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "@lottiefiles/react-lottie-player": "^3.6.0",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-select": "^2.2.6",
+    "@radix-ui/react-slot": "^1.1.2",
+    "@radix-ui/react-switch": "^1.2.6",
+    "@supabase/supabase-js": "^2.57.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "framer-motion": "^12.10.4",
+    "lucide-react": "^0.487.0",
+    "next": "14.1.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.4.0",
+    "sharp": "^0.33.5",
+    "tailwind-merge": "^3.1.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@shadcn/ui": "^0.0.4",
+    "@types/node": "latest",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "14.1.1",
+    "postcss": "^8.5.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "latest"
+  }
+}
