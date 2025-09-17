@@ -6,7 +6,7 @@ import Header from "../components/Header";
 
 // Dynamically import the component with SSR disabled
 const CommunityPageContent = dynamic(
-  () => import('@/app/website/community/components/CommunityPageContent'),
+  () => import('./components/CommunityPageContent'),
   { ssr: false }
 );
 

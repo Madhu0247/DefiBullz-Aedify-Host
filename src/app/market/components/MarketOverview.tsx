@@ -77,7 +77,6 @@ const MarketOverview = ({ refreshInterval = 60000 }: MarketOverviewProps) => {
           liquidity: data.marketStats.liquidity || 0,
           btcDominance: data.marketStats.btcDominance || 0,
         });
-        console.log('Market stats updated:', data.marketStats);
       }
 
       setLastUpdated(new Date());
@@ -166,8 +165,6 @@ const MarketOverview = ({ refreshInterval = 60000 }: MarketOverviewProps) => {
     return `${num.toFixed(2)}%`;
   };
 
-  console.log('Current stats on render:', stats);
-  console.log('BTC Dominance:', stats.btcDominance, 'Formatted:', formatPercentage(stats.btcDominance));
 
   return (
     <div className="mb-8">

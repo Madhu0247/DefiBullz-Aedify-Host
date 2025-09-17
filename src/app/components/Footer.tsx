@@ -26,10 +26,10 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold text-lg mb-4">Features</h3>
           <ul className="space-y-2">
-            <li><Link href="/website/feature" className="text-sm opacity-75 hover:opacity-100">Trading Journal</Link></li>
-            <li><Link href="/website/feature" className="text-sm opacity-75 hover:opacity-100">AI Insights</Link></li>
-            <li><Link href="/website/feature" className="text-sm opacity-75 hover:opacity-100">Custom Strategy</Link></li>
-            <li><Link href="/website/feature" className="text-sm opacity-75 hover:opacity-100">Trade Analytics</Link></li>
+            <li><Link href="/feature" className="text-sm opacity-75 hover:opacity-100">Trading Journal</Link></li>
+            <li><Link href="/feature" className="text-sm opacity-75 hover:opacity-100">AI Insights</Link></li>
+            <li><Link href="/feature" className="text-sm opacity-75 hover:opacity-100">Custom Strategy</Link></li>
+            <li><Link href="/feature" className="text-sm opacity-75 hover:opacity-100">Trade Analytics</Link></li>
           </ul>
         </div>
 
@@ -37,9 +37,9 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold text-lg mb-4">Resources</h3>
           <ul className="space-y-2">
-            <li><Link href="/website/market" className="text-sm opacity-75 hover:opacity-100">Market Data</Link></li>
-            <li><Link href="/website/market" className="text-sm opacity-75 hover:opacity-100">News</Link></li>
-            <li><Link href="/website/blogs" className="text-sm opacity-75 hover:opacity-100">Blogs</Link></li>
+            <li><Link href="/market" className="text-sm opacity-75 hover:opacity-100">Market Data</Link></li>
+            <li><Link href="/market" className="text-sm opacity-75 hover:opacity-100">News</Link></li>
+            <li><Link href="/learn" className="text-sm opacity-75 hover:opacity-100">Blogs</Link></li>
             <li><a href="#" className="text-sm opacity-75 hover:opacity-100">FAQ&apos;s</a></li>  {/* Escape apostrophe */}
           </ul>
         </div>
@@ -57,8 +57,8 @@ const Footer = () => {
         <div>
           <h3 className="font-semibold text-lg mb-4">Learn</h3>
           <ul className="space-y-2">
-            <li><Link href="/website/learn" className="text-sm opacity-75 hover:opacity-100">What is AI Trading?</Link></li>
-            <li><Link href="/website/learn" className="text-sm opacity-75 hover:opacity-100">Why Journal?</Link></li>
+            <li><Link href="/learn" className="text-sm opacity-75 hover:opacity-100">What is AI Trading?</Link></li>
+            <li><Link href="/learn" className="text-sm opacity-75 hover:opacity-100">Why Journal?</Link></li>
           </ul>
 
           {/* Social Media Icons */}

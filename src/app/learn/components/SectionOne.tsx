@@ -11,7 +11,7 @@ const LearnSection = () => {
   // Function to update the selected filter
   const handleFilterClick = (filter: string) => {
     // Update the URL with the selected category
-    router.push(`/website/learn?category=${filter}`);
+    router.push(`/learn?category=${filter}`);
   };
 
   return (

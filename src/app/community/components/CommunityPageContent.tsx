@@ -1,10 +1,10 @@
 "use client";
 
 import React from 'react';
-import Header from '@/app/website/community/components/Header';
-import Community from '@/app/website/community/components/Community';
-import Events from '@/app/website/community/components/Events';
-import Forums from '@/app/website/community/components/Forums';
+import Header from './Header';
+import Community from './Community';
+import Events from './Events';
+import Forums from './Forums';
 import Footer from '../../components/Footer';
 
 const CommunityPageContent = () => {

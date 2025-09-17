@@ -62,7 +62,7 @@ export default function ExchangePage() {
             <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Exchange Not Found</h1>
             <p className="mt-4 text-gray-600">The requested exchange could not be found.</p>
             <Link
-              href="/website/exchanges"
+              href="/exchanges"
               className="mt-6 inline-block bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors"
             >
               Return to Exchanges
@@ -81,7 +81,7 @@ export default function ExchangePage() {
         <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 md:px-8">
           {/* Back Button */}
           <Link 
-            href="/website/exchanges"
+            href="/exchanges"
             className="inline-flex items-center text-white hover:text-gray-300 mb-4 sm:mb-6 transition-colors"
           >
             <svg 
