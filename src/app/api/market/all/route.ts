@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { storeMarketOverview, storeTopCoins, getMarketOverview, getTopCoins } from '@/lib/database/marketService';
 
 interface LiveCoinWatchCoin {
   code: string;
@@ -179,19 +180,42 @@ export async function GET() {
       rank: index + 1
     }));
 
-    // Mock market stats
-    const mockMarketStats = {
-      cap: transformedData.reduce((sum, coin) => sum + coin.market_cap, 0),
-      volume: transformedData.reduce((sum, coin) => sum + coin.total_volume, 0),
+    // Calculate market stats
+    const totalMarketCap = transformedData.reduce((sum, coin) => sum + coin.market_cap, 0);
+    const totalVolume = transformedData.reduce((sum, coin) => sum + coin.total_volume, 0);
+    
+    const marketStats = {
+      cap: totalMarketCap,
+      volume: totalVolume,
       btcDominance: 48.5,
       ethDominance: 18.2,
       defiTvl: 45000000000,
       liquidity: 85000000000
     };
 
+    // Store data in database
+    try {
+      // Store market overview
+      await storeMarketOverview({
+        total_market_cap: totalMarketCap,
+        volume_24h: totalVolume,
+        btc_dominance: 48.5,
+        fear_greed_index: 65, // Mock value for now
+        fear_greed_label: 'Greed'
+      });
+
+      // Store top 10 coins
+      await storeTopCoins(transformedData.slice(0, 10));
+      
+      console.log('✅ Data successfully stored in database');
+    } catch (dbError) {
+      console.error('❌ Database storage failed:', dbError);
+      // Continue without failing the API call
+    }
+
     const response = {
       coins: transformedData,
-      marketStats: mockMarketStats,
+      marketStats: marketStats,
       timestamp: new Date().toISOString()
     };
 
