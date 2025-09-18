@@ -1,10 +1,23 @@
-import { Pool } from 'pg';
+import { Client } from 'pg';
 
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+const client = new Client({
+  host: 'gsm1b5p95odcdkhya1ls.aedify.ai',
+  port: 11035,
+  user: 'admin',
+  password: 'gZ1aIeJjHsfV',
+  database: 'postgres',
   ssl: {
     rejectUnauthorized: false
   }
 });
 
-export default pool;
+// Connect the client
+client.connect()
+  .then(() => {
+    console.log('✅ Connected to PostgreSQL database');
+  })
+  .catch((err) => {
+    console.error('❌ Database connection error:', err);
+  });
+
+export default client;

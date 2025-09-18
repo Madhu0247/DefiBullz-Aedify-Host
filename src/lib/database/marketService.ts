@@ -1,4 +1,4 @@
-import pool from './connection';
+import client from './connection';
 
 // Store market overview data (BTC dominance, fear & greed, etc.)
 export async function storeMarketOverview(data: {
@@ -15,7 +15,7 @@ export async function storeMarketOverview(data: {
       RETURNING *;
     `;
     
-    const result = await pool.query(query, [
+    const result = await client.query(query, [
       data.total_market_cap,
       data.volume_24h,
       data.btc_dominance,
@@ -34,7 +34,7 @@ export async function storeMarketOverview(data: {
 export async function storeTopCoins(coins: any[]) {
   try {
     // First, clear existing data
-    await pool.query('DELETE FROM top_coins');
+    await client.query('DELETE FROM top_coins');
     
     // Insert new data
     for (let i = 0; i < coins.length && i < 10; i++) {
@@ -46,7 +46,7 @@ export async function storeTopCoins(coins: any[]) {
         ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
       `;
       
-      await pool.query(query, [
+      await client.query(query, [
         i + 1,
         coin.name,
         coin.symbol,
@@ -72,7 +72,7 @@ export async function storeTopCoins(coins: any[]) {
 // Get market overview from database
 export async function getMarketOverview() {
   try {
-    const result = await pool.query('SELECT * FROM market_overview ORDER BY last_updated DESC LIMIT 1');
+    const result = await client.query('SELECT * FROM market_overview ORDER BY last_updated DESC LIMIT 1');
     return result.rows[0] || null;
   } catch (error) {
     console.error('Error getting market overview:', error);
@@ -83,7 +83,7 @@ export async function getMarketOverview() {
 // Get top coins from database
 export async function getTopCoins() {
   try {
-    const result = await pool.query('SELECT * FROM top_coins ORDER BY rank_position ASC');
+    const result = await client.query('SELECT * FROM top_coins ORDER BY rank_position ASC');
     return result.rows;
   } catch (error) {
     console.error('Error getting top coins:', error);
